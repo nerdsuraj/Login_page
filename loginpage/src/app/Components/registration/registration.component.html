@@ -1,0 +1,102 @@
+<div class="section" fxLayout="row" fxLayoutAlign="center center" >
+    <button class="home" routerLink="/home">home</button>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="row" fxLayout.sm="row" fxFlex.xs="95"
+            fxFlex.xs="60">
+           
+           
+            <div class="login" routerLink="/login">
+                <P>LOGIN</P>
+            </div>
+            <div class="signup">
+                <p>SIGNUP</p>
+            </div>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            
+            <div class="form">
+                <!-- name -->
+
+                <div class="fullname">
+                    <div>
+                        <mat-label>Name</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+
+                            <input type="text" formControlName="name" matInput placeholder="">
+                            <mat-error>Enter your name</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- email id -->
+
+                <div class="email">
+                    <div>
+                        <mat-label>Email Id</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="email" matInput placeholder="">
+                            <mat-error>Enter an email address</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+
+                <!-- date of birth -->
+                <div class="dob">
+                    <div>
+                        <mat-label>DOB</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="dob"  matInput placeholder="">
+                            <mat-error>Enter a DOB</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- add address -->
+                <div class="address">
+                    <div>
+                        <mat-label>Address</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input type="text" formControlName="address"  matInput placeholder="">
+                            <mat-error>Enter your Address</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- add your country -->
+            
+                <div class="country">
+                    <div>
+                        <mat-label>country</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <!-- <select name="" id=""> -->
+                                <input type="text" formControlName="country"  matInput placeholder="">
+                                <!-- <option *ngFor="let count of country" value="{{count.id}}" >{{count.countri}}</option> -->
+                            <!-- </select> -->
+                        
+                            <mat-error>Enter your country</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+                <div fxLayoutAlign.xs="column" >
+                    <button class="signupbutton" mat-flat-button>Signup</button>
+                </div>
+
+
+            </div>
+        </form>
+ 
+
+</div>

@@ -1,0 +1,36 @@
+<div class="box">
+    <button class="uplode" mat-flat-button routerLink="/uplode">go to uplode</button>
+    <div>
+        <form action="">
+            <label for=""> search by name </label>
+            <br>
+            <input #input (keyup)="searchword(input.value)" type="search"  placeholder="search your people" >
+          
+            <button> <mat-icon>search</mat-icon> </button>
+            </form>
+    </div>
+    <!-- <h2>{{SearchId}}</h2> -->
+    <div >
+        <table *ngFor="let people of peopleData | filter:searchvalue">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>DOB</th>
+                    <th>address</th>
+                    <th>country</th>
+                </tr>
+            </thead>
+            <tbody (click)="openDialog(people)">
+                <tr>
+                    <td >{{people.name}}</td>
+                    <td>{{people.email}}</td>
+                    <td >{{people.dob}}</td>
+                    <td>{{people.address}}</td>
+                    <td>{{people.country}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
