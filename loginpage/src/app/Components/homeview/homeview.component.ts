@@ -10,41 +10,44 @@ import { UserService } from 'src/app/services/User/user.service';
   styleUrls: ['./homeview.component.scss']
 })
 export class HomeviewComponent implements OnInit {
-  peopleData:any;
-  searchvalue:string="";
+  peopleData = [];
+  searchvalue: string = "";
+
+  public year: any = {};
+  public age: any = {};
   constructor(private dialog: MatDialog, private UserService: UserService) { }
 
   ngOnInit(): void {
-   this.getallpeople();
+    this.getallpeople();
   }
 
-   // for update note
+  // for update note
 
-   openDialog(item:any): void {
+  openDialog(item: any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
       width: "50%",
-      data:item,
-     
-    
+      data: item,
+
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed',result);
-      
+      console.log('The dialog was closed', result);
+
     });
   }
 
 
-  getallpeople()
-  {
-    this.UserService.getallPeople().subscribe((reponse:any)=>{
-      console.log("request data",reponse);
+  getallpeople() {
+    this.UserService.getallPeople().subscribe((reponse: any) => {
+      console.log("request data", reponse);
       this.peopleData = reponse.data;
+      this.peopleData.reverse();
     })
   }
   searchword(search: any) {  // This is done for search pipe part in getallbooks and dashboard
     console.log(search);  //this .target.value is coming from console
-    this.searchvalue=search
+    this.searchvalue = search
 
-}
+  }
 }

@@ -15,6 +15,9 @@ export class RegistrationComponent implements OnInit {
 
 registerForm!: FormGroup ;
 submitted = false;
+reverseData=[];
+
+
 
   constructor(private formBuilder: FormBuilder, private UserService: UserService,private snackbar:MatSnackBar) { }
 
@@ -32,12 +35,14 @@ submitted = false;
   register(){
     if(this.registerForm.valid){
       // console.log(this.registerForm.value)
-      this.UserService.registration(this.registerForm.value) .subscribe((response:any)=>{
-        console.log(response)
+      this.UserService.registration(this.registerForm.value).subscribe((response:any)=>{
+        console.log(response);
+        // this.registerForm.reset();
         //snack bar will be added here
-        this.snackbar.open("Registration sucessfully done!!",'',{
+        this.snackbar.open("people add sucessfully done!!",'',{
           duration: 3000,
         })
+        
       },(error)=>{
         console.log(error)
       }

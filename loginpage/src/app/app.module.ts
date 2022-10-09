@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './Components/login/login.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { UpdateComponent } from './Components/update/update.component';
+import { AgePipe } from './pipe/Age/age.pipe';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { UpdateComponent } from './Components/update/update.component';
     HomeviewComponent,
     LoginComponent,
     FilterPipe,
-    UpdateComponent
+    AgePipe,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,
