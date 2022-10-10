@@ -7,7 +7,7 @@ import { RegistrationComponent } from './Components/registration/registration.co
 
 const routes: Routes = [
   {path:"uplode",component:RegistrationComponent},
-  {path:"home",component:HomeviewComponent},
+  {path:"",component:HomeviewComponent},
   {path:"login",component:LoginComponent},
   {path:"update",component:UpdateComponent},
 

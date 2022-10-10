@@ -59,4 +59,9 @@ export class UpdateComponent implements OnInit {
     })
   }
 
+
+  autorelode(){
+    window.location.reload();
+  }
+
 }

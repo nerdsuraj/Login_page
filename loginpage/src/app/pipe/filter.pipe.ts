@@ -10,8 +10,11 @@ export class FilterPipe implements PipeTransform {
       return noteFilterData;
     }
     console.log(noteFilterData)
-    return noteFilterData.filter((x: any) => x.name.toLocaleLowerCase().includes(searchTerm)
+    return noteFilterData.filter((x: any) => x.name.toLocaleLowerCase().includes(searchTerm) || x.country.toLocaleLowerCase().includes(searchTerm)
     );
   }
 
 }
+
+
+
